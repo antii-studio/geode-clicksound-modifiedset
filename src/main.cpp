@@ -67,8 +67,11 @@ public:
       case -13: clickSoundInUse = "desk-hit.ogg"_spr; break;
       case -14: clickSoundInUse = (rand() % 2 == 0) ? "win10usbconnect.ogg"_spr : "win10usbdisconnect.ogg"_spr; break;
     }
+	
+	pitchVariable = rand() % 0.900 + 1.100;
 
      if (Mod::get()->getSettingValue<bool>("enable-clicksound") && !usingCustomClickSound) {
+	FMODAudioEngine::sharedEngine()->setPitch(pitchVariable);
         FMODAudioEngine::sharedEngine()->playEffect(clickSoundInUse);
     } 
 
