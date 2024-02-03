@@ -1,3 +1,9 @@
+//Thanks to Beat (original creator) for telling me to put these in!
+#include <Geode/binding/FMODAudioEngine.hpp>
+#include <Geode/fmod/fmod.hpp>
+
+
+
 #include <Geode/Geode.hpp>
 #include <Geode/modify/PlayerObject.hpp>
 #include <Geode/modify/PauseLayer.hpp>
@@ -17,7 +23,7 @@ class $modify(PlayerObject) {
 public:
   
   // CLICK SOUNDS CLICK SOUNDS CLICK SOUNDS CLICK SOUNDS CLICK SOUNDS CLICK SOUNDS CLICK SOUNDS CLICK SOUNDS CLICK SOUNDS CLICK SOUNDS CLICK SOUNDS CLICK SOUNDS CLICK SOUNDS CLICK SOUNDS CLICK SOUNDS
-  // Carrots. You know why? No reason.
+  // Carrots. You know why? No reason. //TOO MANY CARROTS - antii
   // 🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕
 
   TodoReturn pushButton(PlayerButton p0) {
@@ -85,7 +91,8 @@ public:
       case -19: clickSoundInUse = "aughhh.ogg"_spr; break;
       case -20: clickSoundInUse = "car-door-slam.ogg"_spr; break;
     }
-
+//these code comments are retarded fr - antii
+	  
      if (Mod::get()->getSettingValue<bool>("enable-clicksound") && !usingCustomClickSound) {
 	FMODAudioEngine::sharedEngine()->setPitch(rand() % 0.900 + 1.100;); //Randomizes the pitch n stuff (by antii)
         FMODAudioEngine::sharedEngine()->playEffect(clickSoundInUse);
@@ -145,7 +152,7 @@ public:
 };
 
 // SETTINGS IN PAUSE MENU (ty viper!)
-// i was getting mad at the function, (i'm bi i just think it's funni - viper)
+// i was getting mad at the function
 class $modify(YoureAPansexual,PauseLayer) {
 void YOUAREGAY(CCObject*) {
 		geode::openSettingsPopup(Mod::get());
