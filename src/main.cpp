@@ -92,14 +92,16 @@ public:
       case -20: clickSoundInUse = "car-door-slam.ogg"_spr; break;
     }
 //these code comments are retarded fr - antii
+
+	randomizedPitch = rand() % 0.900 + 1.100;
 	  
      if (Mod::get()->getSettingValue<bool>("enable-clicksound") && !usingCustomClickSound) {
-	FMODAudioEngine::sharedEngine()->setPitch(rand() % 0.900 + 1.100;); //Randomizes the pitch n stuff (by antii)
+	FMODAudioEngine::sharedEngine()->setPitch(randomizedPitch); //Randomizes the pitch n stuff (by antii)
         FMODAudioEngine::sharedEngine()->playEffect(clickSoundInUse);
     } 
 
     if (Mod::get()->getSettingValue<bool>("enable-clicksound") && usingCustomClickSound) {
-	FMODAudioEngine::sharedEngine()->setPitch(rand() % 0.900 + 1.100;); //Randomizes the pitch n stuff also (by antii)
+	FMODAudioEngine::sharedEngine()->setPitch(randomizedPitch); //Randomizes the pitch n stuff also (by antii)
         FMODAudioEngine::sharedEngine()->playEffect(customClickSound);
     }
     if(!Mod::get()->getSettingValue<bool>("enable-clicksound") && !Mod::get()->getSettingValue<bool>("enable-releasesound")){}else{carrot=true;}
